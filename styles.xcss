@@ -1,0 +1,6 @@
+@require "./themes/theme.js" as theme;
+@import "./lib/button.xcss" with theme;
+
+body {
+  width: 12px;
+}

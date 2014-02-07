@@ -1,0 +1,298 @@
+/**
+*
+* Copyright 2012 Adobe Systems Inc.;
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+*/
+@module theme;
+
+@import "./button-base.xcss";
+/* topdoc
+  name: Button
+  description: A simple button
+  modifiers:
+    :active: Active state
+    :disabled: Disabled state
+    :hover: Hover state
+    :focus: Focused
+  markup:
+    <button class="topcoat-button">Button</button>
+    <button class="topcoat-button" disabled>Button</button>
+  examples:
+    mobile button: http://codepen.io/Topcoat/pen/DpKtf
+  tags:
+    - desktop
+    - light
+    - mobile
+    - button
+*/
+%button--common {
+    extend: %button;
+    padding: {theme.padding};
+    font-size: {theme.fontSize};
+    font-weight: {theme.fontWeight};
+    line-height: {theme.lineHeight};
+    letter-spacing: {theme.letterSpacing};
+    color: {theme.color};
+    text-shadow: {theme.textShadow};
+    vertical-align: {theme.verticalAlign};
+    border-radius: {theme.borderRadius};
+}
+
+.button {
+    extend: %button--common;
+    background-color: {theme.backgroundColor};
+    box-shadow: {theme.boxShadow};
+    border: {theme.border};
+}
+
+.button:hover {
+    background-color: {theme.backgroundColor.hover};
+}
+
+.button:active {
+    background-color: {theme.backgroundColor.down};
+    box-shadow: {theme.boxShadow.down};
+}
+
+.button:focus {
+    border: {theme.border.focus};
+    box-shadow: {theme.boxShadow.focus};
+    outline: 0;
+}
+
+.button:disabled {
+    extend: %button--disabled;
+}
+
+/* topdoc
+  name: Quiet Button
+  description: A simple, yet quiet button
+  modifiers:
+    :active: Quiet button active state
+    :disabled: Disabled state
+    :hover: Hover state
+    :focus: Focused
+  markup:
+    <button class="topcoat-button--quiet">Button</button>
+    <button class="topcoat-button--quiet" disabled>Button</button>
+  tags:
+    - desktop
+    - light
+    - mobile
+    - button
+    - quiet
+*/
+.button--quiet {
+    extend: %button--common;
+    extend: %button--quiet;
+}
+
+.button--quiet:disabled {
+    extend: .button:disabled;
+}
+
+.button--quiet:hover {
+    extend: .button:hover;
+    text-shadow: {theme.textShadow};
+    border: {theme.border};
+    box-shadow: {theme.boxShadow};
+}
+
+.button--quiet:focus {
+    extend: .button:focus;
+}
+
+.button--quiet:active {
+   color: {theme.color};
+   text-shadow: {theme.textShadow};
+   background-color: {theme.backgroundColor.down};
+   border: {theme.border};
+   box-shadow: {theme.boxShadow.down};
+}
+
+/* topdoc
+  name: Large Button
+  description: A big ol button
+  modifiers:
+    :active: Active state
+    :disabled: Disabled state
+    :hover: Hover state
+    :focus: Focused
+  markup:
+    <button class="topcoat-button--large" >Button</button>
+    <button class="topcoat-button--large" disabled>Button</button>
+  tags:
+    - desktop
+    - light
+    - mobile
+    - button
+    - large
+*/
+%button--common-large {
+   font-size: {theme.fontSize.large};
+   font-weight: {theme.fontWeight.large};
+   line-height: {theme.lineHeight.large};
+   padding: {theme.padding.large};
+}
+
+.button--large {
+   extend: .button;
+   extend: %button--common-large;
+}
+
+.button--large:active {
+   extend: .button:active;
+}
+
+.button--large:disabled {
+   extend: .button:disabled;
+}
+
+.button--large:hover {
+   extend: .button:hover;
+}
+
+.button--large:focus {
+   extend: .button:focus;
+}
+
+/* topdoc
+  name: Large Quiet Button
+  description: A large, yet quiet button
+  modifiers:
+    :active: Active state
+    :disabled: Disabled state
+    :hover: Hover state
+    :focus: Focused
+  markup:
+    <button class="topcoat-button--large--quiet" >Button</button>
+    <button class="topcoat-button--large--quiet" disabled>Button</button>
+  tags:
+    - desktop
+    - light
+    - mobile
+    - button
+    - large
+    - quiet
+*/
+.button--large--quiet {
+   extend: %button--common;
+   extend: %button--quiet;
+   extend: %button--common-large;
+}
+
+.button--large--quiet:active {
+   extend: .button--quiet:active;
+}
+
+.button--large--quiet:disabled {
+   extend: %button--disabled;
+}
+
+.button--large--quiet:hover {
+   extend: .button--quiet:hover;
+}
+
+.button--large--quiet:focus {
+   extend: .button:focus;
+}
+
+/* topdoc
+  name: Call To Action Button
+  description: A CALL TO ARMS, er, ACTION!
+  modifiers:
+    :active: Active state
+    :disabled: Disabled state
+    :hover: Hover state
+    :focus: Focused
+  markup:
+    <button class="topcoat-button--cta" >Button</button>
+    <button class="topcoat-button--cta" disabled>Button</button>
+  tags:
+    - desktop
+    - light
+    - mobile
+    - button
+    - call to action
+*/
+.button--cta {
+   extend: .button;
+   border: {theme.border.cta};
+   background-color: {theme.backgroundColor.cta};
+   box-shadow: {theme.boxShadow.cta};
+   color: {theme.color.cta};
+   font-weight: {theme.fontWeight.cta};
+   text-shadow: {theme.textShadow.cta};
+}
+
+.button--cta:hover {
+   background-color: {theme.backgroundColor.cta.hover};
+}
+
+.button--cta:focus {
+   extend: .button:focus;
+}
+
+.button--cta:active {
+   background-color: {theme.backgroundColor.cta.down};
+   box-shadow: {theme.boxShadow.cta.down};
+}
+
+.button--cta:disabled {
+   extend: .button:disabled;
+}
+
+/* topdoc
+  name: Large Call To Action Button
+  description: Like call to action, but bigger
+  modifiers:
+    :active: Active state
+    :disabled: Disabled state
+    :hover: Hover state
+    :focus: Focused
+  markup:
+    <button class="topcoat-button--large--cta" >Button</button>
+    <button class="topcoat-button--large--cta" disabled>Button</button>
+  tags:
+    - desktop
+    - light
+    - mobile
+    - button
+    - large
+    - call to action
+*/
+.button--large--cta {
+   extend: .button--cta;
+   font-size: {theme.fontSize.large};
+   font-weight: {theme.fontWeight.large};
+   line-height: {theme.lineHeight.large};
+   padding: {theme.padding.large};
+}
+
+.button--large--cta:hover {
+   extend: .button--cta:hover;
+}
+
+.button--large--cta:focus {
+   extend: .button:focus;
+}
+
+.button--large--cta:active {
+   extend: .button--cta:active;
+}
+
+.button--large--cta:disabled {
+   extend: .button:disabled;
+}

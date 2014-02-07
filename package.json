@@ -1,0 +1,24 @@
+{
+  "name": "topcoat-xcss",
+  "version": "0.0.0",
+  "description": "A demo port of TopCoat components to xCSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andreypopp/topcoat-xcss"
+  },
+  "dependencies": {
+    "xcss": "git+https://github.com/andreypopp/xcss.git#master"
+  },
+  "keywords": [
+    "topcoat",
+    "xcss"
+  ],
+  "bugs": {
+    "url": "https://github.com/andreypopp/topcoat-xcss/issues"
+  },
+  "homepage": "https://github.com/andreypopp/topcoat-xcss"
+}
