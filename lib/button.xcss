@@ -16,7 +16,6 @@
 *
 */
 @module theme;
-
 @import "./button-base.xcss";
 /* topdoc
   name: Button
@@ -39,36 +38,36 @@
 */
 %button--common {
     extend: %button;
-    padding: {theme.padding};
-    font-size: {theme.fontSize};
-    font-weight: {theme.fontWeight};
-    line-height: {theme.lineHeight};
-    letter-spacing: {theme.letterSpacing};
-    color: {theme.color};
-    text-shadow: {theme.textShadow};
-    vertical-align: {theme.verticalAlign};
-    border-radius: {theme.borderRadius};
+    padding: var(padding);
+    font-size: var(font-size);
+    font-weight: var(font-weight);
+    line-height: var(line-height);
+    letter-spacing: var(letter-spacing);
+    color: var(color);
+    text-shadow: var(text-shadow);
+    vertical-align: var(vertical-align);
+    border-radius: var(border-radius);
 }
 
 .button {
     extend: %button--common;
-    background-color: {theme.backgroundColor};
-    box-shadow: {theme.boxShadow};
-    border: {theme.border};
+    background-color: var(background-color);
+    box-shadow: var(box-shadow);
+    border: var(border);
 }
 
 .button:hover {
-    background-color: {theme.backgroundColor.hover};
+    background-color: var(background-color--hover);
 }
 
 .button:active {
-    background-color: {theme.backgroundColor.down};
-    box-shadow: {theme.boxShadow.down};
+    background-color: var(background-color--down);
+    box-shadow: var(box-shadow--down);
 }
 
 .button:focus {
-    border: {theme.border.focus};
-    box-shadow: {theme.boxShadow.focus};
+    border: var(border--focus);
+    box-shadow: var(box-shadow--focus);
     outline: 0;
 }
 
@@ -105,9 +104,9 @@
 
 .button--quiet:hover {
     extend: .button:hover;
-    text-shadow: {theme.textShadow};
-    border: {theme.border};
-    box-shadow: {theme.boxShadow};
+    text-shadow: var(text-shadow);
+    border: var(border);
+    box-shadow: var(box-shadow);
 }
 
 .button--quiet:focus {
@@ -115,11 +114,11 @@
 }
 
 .button--quiet:active {
-   color: {theme.color};
-   text-shadow: {theme.textShadow};
-   background-color: {theme.backgroundColor.down};
-   border: {theme.border};
-   box-shadow: {theme.boxShadow.down};
+   color: var(color);
+   text-shadow: var(text-shadow);
+   background-color: var(background-color--down);
+   border: var(border);
+   box-shadow: var(box-shadow--down);
 }
 
 /* topdoc
@@ -141,10 +140,10 @@
     - large
 */
 %button--common-large {
-   font-size: {theme.fontSize.large};
-   font-weight: {theme.fontWeight.large};
-   line-height: {theme.lineHeight.large};
-   padding: {theme.padding.large};
+   font-size: var(font-size--large);
+   font-weight: var(font-weight--large);
+   line-height: var(line-height--large);
+   padding: var(padding--large);
 }
 
 .button--large {
@@ -229,16 +228,16 @@
 */
 .button--cta {
    extend: .button;
-   border: {theme.border.cta};
-   background-color: {theme.backgroundColor.cta};
-   box-shadow: {theme.boxShadow.cta};
-   color: {theme.color.cta};
-   font-weight: {theme.fontWeight.cta};
-   text-shadow: {theme.textShadow.cta};
+   border: var(border--cta);
+   background-color: var(background-color--cta);
+   box-shadow: var(box-shadow--cta);
+   color: var(color--cta);
+   font-weight: var(font-weight--cta);
+   text-shadow: var(text-shadow--cta);
 }
 
 .button--cta:hover {
-   background-color: {theme.backgroundColor.cta.hover};
+   background-color: var(background-color--cta--hover);
 }
 
 .button--cta:focus {
@@ -246,8 +245,8 @@
 }
 
 .button--cta:active {
-   background-color: {theme.backgroundColor.cta.down};
-   box-shadow: {theme.boxShadow.cta.down};
+   background-color: var(background-color--cta--down);
+   box-shadow: var(box-shadow--cta--down);
 }
 
 .button--cta:disabled {
@@ -275,10 +274,10 @@
 */
 .button--large--cta {
    extend: .button--cta;
-   font-size: {theme.fontSize.large};
-   font-weight: {theme.fontWeight.large};
-   line-height: {theme.lineHeight.large};
-   padding: {theme.padding.large};
+   font-size: var(font-size--large);
+   font-weight: var(font-weight--large);
+   line-height: var(line-height--large);
+   padding: var(padding--large);
 }
 
 .button--large--cta:hover {
@@ -296,3 +295,4 @@
 .button--large--cta:disabled {
    extend: .button:disabled;
 }
+

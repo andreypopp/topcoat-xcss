@@ -1,0 +1,14 @@
+@import "./variables-shared.xcss";
+@import "./variables-desktop.xcss";
+@import "./variables-light.xcss";
+
+body {
+	margin: 0;
+	padding: 0;
+	background: var(background--body);
+}
+
+:focus {
+  outline-color: transparent;
+  outline-style: none;
+}
