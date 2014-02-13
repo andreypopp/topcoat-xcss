@@ -1,4 +1,5 @@
 @require "./themes/theme-desktop-light.xcss" as theme;
+@import "./themes/theme-desktop-light.xcss";
 @import "./lib/button.xcss" with theme;
 
 body {
